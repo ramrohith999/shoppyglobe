@@ -1,37 +1,62 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import ProductList from "../components/ProductList";
-import ProductDetail from "../components/ProductDetail";
-import Cart from "../components/Cart";
-import Checkout from "../components/Checkout";
-import NotFound from "../components/NotFound";
+
+import { lazy, Suspense } from "react";
+
+import Loader from "../components/Loader";
+
+const ProductList = lazy(() =>
+  import("../components/ProductList")
+);
+
+const ProductDetail = lazy(() =>
+  import("../components/ProductDetail")
+);
+
+const Cart = lazy(() =>
+  import("../components/Cart")
+);
+
+const Checkout = lazy(() =>
+  import("../components/Checkout")
+);
+
+const NotFound = lazy(() =>
+  import("../components/NotFound")
+);
+
+const withSuspense = (Component) => (
+  <Suspense fallback={<Loader />}>
+    <Component />
+  </Suspense>
+);
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />,
+    errorElement: withSuspense(NotFound),
 
     children: [
       {
         index: true,
-        element: <ProductList />,
+        element: withSuspense(ProductList),
       },
 
       {
         path: "product/:id",
-        element: <ProductDetail />,
+        element: withSuspense(ProductDetail),
       },
 
       {
         path: "cart",
-        element: <Cart />,
+        element: withSuspense(Cart),
       },
 
       {
         path: "checkout",
-        element: <Checkout />,
+        element: withSuspense(Checkout),
       },
     ],
   },

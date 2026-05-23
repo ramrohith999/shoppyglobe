@@ -35,7 +35,7 @@ const CartItem = ({ item }) => {
           onClick={() =>
             dispatch(decreaseQuantity(item.id))
           }
-          className="bg-gray-200 px-3 py-1 rounded cursor-pointer"
+          className="bg-gray-200 px-3 py-1 rounded cursor-pointer hover:scale-105"
         >
           -
         </button>
@@ -49,7 +49,7 @@ const CartItem = ({ item }) => {
           onClick={() =>
             dispatch(increaseQuantity(item.id))
           }
-          className="bg-gray-200 px-3 py-1 rounded cursor-pointer"
+          className="bg-gray-200 px-3 py-1 rounded cursor-pointer hover:scale-105"
         >
           +
         </button>
@@ -65,7 +65,7 @@ const CartItem = ({ item }) => {
           onClick={() =>
             dispatch(removeFromCart(item.id))
           }
-          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 cursor-pointer transition"
+          className="bg-red-500 text-white px-4 py-2 hover:scale-105 rounded-lg hover:bg-red-600 cursor-pointer transition"
         >
           Remove
         </button>

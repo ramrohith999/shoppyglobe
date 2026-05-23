@@ -48,7 +48,7 @@ const Cart = () => {
 
         <Link
           to="/checkout"
-          className="bg-green-500 text-white px-8 py-4 rounded-2xl hover:bg-green-600 transition duration-300 text-lg font-bold shadow-lg"
+          className="bg-green-500 hover:scale-102 text-white px-8 py-4 rounded-2xl hover:bg-green-600 transition duration-300 text-lg font-bold shadow-lg"
         >
           Proceed to Checkout
         </Link>

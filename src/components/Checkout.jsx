@@ -106,7 +106,7 @@ const Checkout = () => {
 
             <button
               type="submit"
-              className="w-full bg-green-500 text-white py-3 rounded-lg cursor-pointer hover:bg-green-600 transition"
+              className="w-full bg-green-500 text-white py-3 hover:scale-102 rounded-lg cursor-pointer hover:bg-green-600 transition"
             >
               Place Order
             </button>

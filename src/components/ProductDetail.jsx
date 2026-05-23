@@ -111,7 +111,7 @@ return (
           onClick={() =>
             dispatch(addToCart(product))
           }
-          className="bg-cyan-500 text-white py-4 rounded-2xl cursor-pointer hover:bg-cyan-700 transition duration-300 text-lg font-bold shadow-lg"
+          className="bg-cyan-500 text-white hover:scale-102 py-4 rounded-2xl cursor-pointer hover:bg-cyan-700 transition duration-300 text-lg font-bold shadow-lg"
         >
           Add to Cart
         </button>

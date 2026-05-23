@@ -1,10 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-
 import { useNavigate } from "react-router-dom";
-
 import { clearCart } from "../redux/cartSlice";
-
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Checkout = () => {
   const cartItems = useSelector(
@@ -38,7 +36,7 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("Order placed successfully!");
+    toast.success("Order placed successfully!");
 
     dispatch(clearCart());
 

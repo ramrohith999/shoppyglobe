@@ -8,3 +8,10 @@ export const store = configureStore({
     search: searchReducer,
   },
 });
+//added cart to save so that on refresh cart is not lost
+store.subscribe(() => {
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(store.getState().cart.items)
+  );
+});

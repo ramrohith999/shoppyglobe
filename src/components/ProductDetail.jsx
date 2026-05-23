@@ -95,7 +95,7 @@ return (
             <span className="font-bold">
               Rating:
             </span>{" "}
-            ⭐ {product.rating}
+            ⭐ {product.rating.toFixed(1)}
           </p>
 
           <p>

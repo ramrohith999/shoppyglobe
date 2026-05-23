@@ -31,6 +31,7 @@ const CartItem = ({ item }) => {
 
       <div className="flex items-center gap-3">
         <button
+        type="button"
           onClick={() =>
             dispatch(decreaseQuantity(item.id))
           }
@@ -44,6 +45,7 @@ const CartItem = ({ item }) => {
         </span>
 
         <button
+        type="button"
           onClick={() =>
             dispatch(increaseQuantity(item.id))
           }
@@ -59,6 +61,7 @@ const CartItem = ({ item }) => {
         </p>
 
         <button
+        type="button"
           onClick={() =>
             dispatch(removeFromCart(item.id))
           }

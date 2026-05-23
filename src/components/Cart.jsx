@@ -15,19 +15,23 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="text-center mt-20">
-        <h1 className="text-3xl font-bold mb-4">
-          Your Cart is Empty
-        </h1>
+  <div className="flex flex-col justify-center items-center h-[70vh] text-center">
+    <h1 className="text-4xl font-bold mb-4">
+      Your Cart is Empty
+    </h1>
 
-        <Link
-          to="/"
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg"
-        >
-          Continue Shopping
-        </Link>
-      </div>
-    );
+    <p className="text-gray-600 mb-6">
+      Looks like you have not added anything yet.
+    </p>
+
+    <Link
+      to="/"
+      className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
+    >
+      Continue Shopping
+    </Link>
+  </div>
+);
   }
 
   return (

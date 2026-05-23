@@ -6,12 +6,12 @@ const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
       <img
         src={product.thumbnail}
         alt={product.title}
         loading="lazy"
-        className="w-full h-52 object-cover"
+       className="w-full h-56 object-cover hover:scale-105 transition duration-300"
       />
 
       <div className="p-4">

@@ -15,6 +15,7 @@ const ProductDetail = () => {
 
   const [error, setError] = useState("");
 
+{/* used usefetch to get details of product as my custom hook fetches all products */}
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -50,72 +51,74 @@ const ProductDetail = () => {
       </div>
     );
   }
-
-  return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <div className="grid md:grid-cols-2 gap-10 bg-white shadow-lg rounded-2xl p-6">
+return (
+  <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="grid md:grid-cols-2 gap-10 bg-white shadow-2xl rounded-3xl overflow-hidden">
+      <div className="overflow-hidden">
         <img
           src={product.thumbnail}
           alt={product.title}
           loading="lazy"
-          className="w-full rounded-xl object-cover"
+          className="w-full h-full object-cover hover:scale-105 transition duration-500"
         />
+      </div>
 
-        <div>
-          <h1 className="text-3xl font-bold mb-4">
-            {product.title}
-          </h1>
+      <div className="p-8 flex flex-col justify-center">
+        <h1 className="text-4xl font-extrabold mb-4">
+          {product.title}
+        </h1>
 
-          <p className="text-gray-600 mb-4">
-            {product.description}
+        <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+          {product.description}
+        </p>
+
+        <p className="text-4xl font-bold text-cyan-600 mb-6">
+          ${product.price}
+        </p>
+
+        <div className="space-y-3 mb-8 text-lg">
+          <p>
+            <span className="font-bold">
+              Brand:
+            </span>{" "}
+            {product.brand}
           </p>
 
-          <p className="text-2xl font-semibold text-blue-600 mb-4">
-            ${product.price}
+          <p>
+            <span className="font-bold">
+              Category:
+            </span>{" "}
+            {product.category}
           </p>
 
-          <div className="space-y-2 mb-6">
-            <p>
-              <span className="font-semibold">
-                Brand:
-              </span>{" "}
-              {product.brand}
-            </p>
+          <p>
+            <span className="font-bold">
+              Rating:
+            </span>{" "}
+            ⭐ {product.rating}
+          </p>
 
-            <p>
-              <span className="font-semibold">
-                Category:
-              </span>{" "}
-              {product.category}
-            </p>
-
-            <p>
-              <span className="font-semibold">
-                Rating:
-              </span>{" "}
-              {product.rating}
-            </p>
-
-            <p>
-              <span className="font-semibold">
-                Stock:
-              </span>{" "}
-              {product.stock}
-            </p>
-          </div>
-
-          <button
-            onClick={() =>
-              dispatch(addToCart(product))
-            }
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
-          >
-            Add to Cart
-          </button>
+          <p>
+            <span className="font-bold">
+              Stock:
+            </span>{" "}
+            {product.stock}
+          </p>
         </div>
+
+        <button
+          type="button"
+          onClick={() =>
+            dispatch(addToCart(product))
+          }
+          className="bg-cyan-500 text-white py-4 rounded-2xl cursor-pointer hover:bg-cyan-700 transition duration-300 text-lg font-bold shadow-lg"
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default ProductDetail;

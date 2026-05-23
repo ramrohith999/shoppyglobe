@@ -45,6 +45,7 @@ const Checkout = () => {
     navigate("/");
   };
 
+  {/*if cart is empty */}
   if (cartItems.length === 0) {
     return (
       <div className="text-center mt-20">
@@ -60,7 +61,7 @@ const Checkout = () => {
       <div className="grid md:grid-cols-2 gap-10">
         <form
           onSubmit={handleSubmit}
-          className="bg-white shadow-lg rounded-2xl p-6"
+         className="bg-white shadow-2xl rounded-3xl p-8"
         >
           <h1 className="text-3xl font-bold mb-6">
             Checkout
@@ -112,7 +113,7 @@ const Checkout = () => {
           </div>
         </form>
 
-        <div className="bg-white shadow-lg rounded-2xl p-6">
+        <div className="bg-white shadow-2xl rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-6">
             Order Summary
           </h2>

@@ -31,7 +31,7 @@ const Header = () => {
 
           <Link
             to="/cart"
-            className="bg-white text-blue-600 px-4 py-2 rounded-full hover:bg-gray-200 transition duration-300 shadow-md"
+            className="bg-white text-cyan-600 px-4 py-2 rounded-full hover:bg-gray-200 transition duration-300 shadow-md"
           >
             Cart ({totalItems})
           </Link>

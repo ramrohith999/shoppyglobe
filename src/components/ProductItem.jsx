@@ -6,41 +6,43 @@ const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
-      <img
-        src={product.thumbnail}
-        alt={product.title}
-        loading="lazy"
-       className="w-full h-56 object-cover hover:scale-105 transition duration-300"
-      />
+    <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col group">
+      <div className="overflow-hidden">
+        <img
+          src={product.thumbnail}
+          alt={product.title}
+          loading="lazy"
+          className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
+        />
+      </div>
 
-      <div className="p-4">
-        <h2 className="text-lg font-bold mb-2">
+      <div className="p-5 flex flex-col grow">
+        <h2 className="text-xl font-bold mb-2 line-clamp-1">
           {product.title}
         </h2>
 
-        <p className="text-gray-600 mb-2">
-          ${product.price}
-        </p>
-
-        <p className="text-sm text-gray-500 mb-4">
+        <p className="text-gray-500 text-sm capitalize mb-2">
           {product.category}
         </p>
 
-        <div className="flex gap-2">
+        <p className="text-2xl font-bold text-cyan-600 mb-5">
+          ${product.price}
+        </p>
+
+        <div className="mt-auto flex gap-3">
           <button
-          type="button"
+            type="button"
             onClick={() => dispatch(addToCart(product))}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition cursor-pointer"
+            className="flex-1 cursor-pointer bg-cyan-500 text-white py-3 rounded-xl hover:bg-cyan-700 transition duration-300 font-semibold"
           >
             Add to Cart
           </button>
 
           <Link
             to={`/product/${product.id}`}
-            className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+            className="flex-1 text-center bg-gray-100 py-3 rounded-xl hover:bg-gray-200 transition duration-300 font-semibold"
           >
-            Details
+            details
           </Link>
         </div>
       </div>
